@@ -1,0 +1,636 @@
+/* Variables*/
+
+$fondo: linear-gradient(to top,#537A38,#D4F7BB,#A8F571);
+$color_fb:#3b5998;
+$color_tw:#55acee;
+$color_it:#3f729b;
+$color_gl:#dd4b39;
+$color_yt:#e52d27;
+$text_lista:'Courier New', Courier, monospace;
+
+@mixin dim ($alto,$ancho){
+    height: $alto;
+    width: $ancho;
+
+}
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+#area
+{
+    display: grid;
+    grid-template-areas:
+    "menu  menu  menu"
+    "info info info"
+    "info2 info2 info2"
+    "articulo articulo articulo"
+    "footer footer footer";
+    gap: 5px;
+    height: 220vh;
+    grid-template-rows: 80px 270px 460px auto 50px;
+    grid-template-columns: auto auto 150px;
+    background: $fondo;
+
+    header {
+        grid-area: info;
+        position:fixed;
+        top: 80px;
+        left:0;
+        right:0;
+        padding-bottom: 5px;
+        background-image: url(../assets/clases_particulares2.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
+
+    
+
+        h1{
+            @include dim(250px,100%);
+            /*width: 100%;
+            height: 250px;*/
+            text-align:center;
+            padding-top: 115px;
+            color:antiquewhite;
+        }
+        .publicidad{
+            display: flex;
+            justify-content:space-between;
+
+        }
+        h8{
+            @include dim(50px,400px);
+           /* width: 400px;
+             height: 50px;*/
+             padding: 10px;
+             margin-right: 20px;
+               background-color: #537A38;
+             animation-name: example;
+              animation-duration: 2s;
+              animation-iteration-count: infinite;
+              text-align: center;
+
+        }
+        span{
+            display:inline-block;
+            vertical-align: middle;
+            line-height: normal;
+
+        }
+    }
+    section{
+    grid-area: info2;
+    display:flex;
+    align-items: flex-start;
+    padding-top: 80px;
+
+        .principal
+        {
+            font-family: 'Roboto Slab', serif;
+            justify-items: flex-start;  
+        }
+        .titulo{
+            text-align: center;
+             font-weight: bold;
+   
+             font-size: 40px;
+             justify-self: center;
+
+        }
+        .p1{
+            font-size: 20px;
+             padding: 5px;
+             align-self: center;
+
+        }
+        .principal .lista
+        {
+            @include dim(80px,auto); 
+           /* width: auto;
+             height: 80px;*/
+              text-align: center;
+
+        }
+
+            ul{
+                display:inline;
+                list-style: lower-roman;
+                font-style: oblique;  
+                font-family:$text_lista;
+                font-size: 20px;
+            }
+        }
+    nav{
+         grid-area: menu;
+         display: flex;
+         justify-content: space-between;
+        ul{
+            list-style: none;
+            display: flex;
+            list-style: none;
+            justify-content: end;
+            align-content: stretch;
+            flex-wrap: nowrap;
+            align-items: center;
+
+        }
+            li a {
+                margin:10px 10px;
+                padding: 10px;
+                background-color: #A8F571;
+                text-decoration: none;
+                color:antiquewhite;
+                border-radius: 5px;
+                transition: all 2s;
+
+            }
+            a:hover{
+                background-color: white;
+                color: #657559;
+
+            }
+        }
+    article{
+          grid-area: articulo;
+         display: flex;
+         align-content: center;
+         justify-items: center;
+         align-items: flex-start;
+         padding-left: 20px;
+         gap: 10px;
+
+
+    }
+        img{
+            border-radius: 20px;
+        }
+
+    aside{
+         grid-area: banner;
+         display:flex;
+         flex-direction: column;
+         align-content: stretch;
+         align-items: center;
+         justify-content: space-between;
+
+        }
+        .ban1{
+        margin-top: 5px;
+        padding:5px;
+    
+         }
+    
+        .ban2
+          {
+        margin: 0;
+        padding:5px;
+    
+            }
+    
+        .ban3
+          {
+        margin: 0;
+        padding:5px;
+    
+         }
+    
+        .ban4
+          {
+        margin: 0;
+        padding:5px;
+    
+          }
+    footer{
+        
+         grid-area: footer;
+         text-align: center;
+         font-family:$text_lista;
+         font-size: 10px;
+         padding: 5px;
+
+    }
+    
+    
+
+    .arreglo{
+          background-color: #D4F7BB;
+         grid-area: menu;
+         position:fixed;
+         left: 0px;
+         right:0px;
+          padding-left: 100px;
+
+    }
+    nav div img{
+        @include dim(auto,80px);
+       /* width: 80px;
+        height:auto;*/
+        padding-left:0px;
+
+    }
+}
+@keyframes example {
+    0%   {background-color: #537A38;}
+    25%  {background-color: #D4F7BB;}
+    50%  {background-color: #A8F571;}
+    100% {background-color: green;}
+          }
+
+          @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+          a.btn-social,
+          .btn-social
+          {
+              border-radius: 50%;
+              color: #ffffff !important;
+              display: inline-block;
+              height: 54px;
+              line-height: 54px;
+              margin: 8px 4px;
+              text-align: center;
+              text-decoration: none;
+              transition: background-color .3s;
+              webkit-transition: background-color .3s;
+              width: 54px;
+          }
+          
+          .btn-social .fa,.btn-social i
+          {
+              backface-visibility: hidden;
+              moz-backface-visibility: hidden;
+              ms-transform: scale(1);
+              o-transform: scale(1);
+              transform: scale(1);
+              transition: all .25s;
+              webkit-backface-visibility: hidden;
+              webkit-transform: scale(1);
+              webkit-transition: all .25s;
+          }
+          .btn-social:hover,.btn-social:focus
+          {
+              color: #fff;
+              outline: none;
+              text-decoration: none;
+          }
+          .btn-social:hover .fa,.btn-social:focus .fa,.btn-social:hover i,.btn-social:focus i
+          {
+              ms-transform: scale(1.3);
+              o-transform: scale(1.3);
+              transform: scale(1.3);
+              webkit-transform: scale(1.3);
+          }
+          .btn-social.btn-xs
+          {
+              font-size: 9px;
+              height: 24px;
+              line-height: 13px;
+              margin: 6px 2px;
+              width: 24px;
+          }
+          .btn-social.btn-sm
+          {
+              font-size: 13px;
+              height: 36px;
+              line-height: 18px;
+              margin: 6px 2px;
+              width: 36px;
+          }
+          .btn-social.btn-lg
+          {
+              font-size: 22px;
+              height: 72px;
+              line-height: 40px;
+              margin: 10px 6px;
+              width: 72px;
+          }
+          
+          
+          
+          .btn-facebook
+          {
+              background-color: $color_fb;
+          }
+          .btn-facebook:hover
+          {
+              background-color: #4c70ba;
+          }
+          
+          .btn-google-plus
+          {
+              background-color: $color_gl;
+          }
+          .btn-google-plus:hover
+          {
+              background-color: #e47365;
+          }
+          .btn-instagram
+          {
+              background-color: $color_it;
+          }
+          .btn-instagram:hover
+          {
+              background-color: #548cb9;
+          }
+          
+          .btn-twitter
+          {
+              background-color: $color_tw;
+          }
+          .btn-twitter:hover
+          {
+              background-color: #83c3f3;
+          }
+          
+          .btn-youtube
+          {
+              background-color: $color_yt;
+          }
+          .btn-youtube:hover
+          {
+              background-color: #ea5955;
+          }
+          
+          /* responsive */
+          @media (max-width: 768px) {
+          *
+          {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: sans-serif;
+          }
+          }
+          
+          @media (max-width: 768px) {
+          #area
+          {
+              display: grid;
+              grid-template-areas:
+                   "menu menu menu"
+                   "info2 info2 info2"
+                   ". articulo ."
+                   "footer footer footer";
+              gap: 5px;
+              height: 300vh;
+              grid-template-rows: auto 12% 75% auto;
+              grid-template-columns: 25% auto 25%;
+              }
+              }
+              
+              @media (max-width: 768px) {
+              #area header .publicidad {
+                  display: none;
+              
+              }
+              #area header h8{
+                  display: none;
+                }
+                
+                
+                
+              
+              #area header span{
+                  display:none
+              
+              }
+          }
+          
+          
+          @media (max-width: 768px) {
+          #area nav
+              {             
+              grid-area: menu;
+              display: flex;
+              justify-content: center;
+                    
+              }
+              }
+          
+          @media (max-width: 768px) {
+          #area nav div img
+              {
+              display:none;
+               }
+              }
+              
+          @media (max-width: 768px) { /* max = hasta... */
+          #area nav ul
+              {
+              list-style: none;
+              display: flex;
+              flex-direction: row;
+              list-style: none;
+              justify-content: center;
+              align-content: stretch;
+              flex-wrap: nowrap;
+              align-items: center;
+              font-size:5px;
+              
+              }
+              }
+               
+          @media (max-width: 768px) {
+          #area nav ul li a 
+              {
+              margin:1px 1px;
+              padding: 1px;
+              background-color: blue;
+              text-decoration: none;
+              color:antiquewhite;
+              border-radius: 1px;
+              font-size:10px;
+              }
+              }
+              
+          @media (max-width: 768px) {
+          #area header
+              {
+              grid-area: info;
+              position:fixed;
+              top: 80px;
+              left:0;
+              right:0;
+              padding-bottom: 5px;
+              background-image: url(../assets/clases_particulares2.png);
+              background-size: cover;
+              }
+              }
+          
+          @media (max-width: 768px) {
+          #area section
+              {       
+              grid-area: info2;
+              display:flex;
+              align-items: flex-start;
+              padding-top: 100px;
+              }
+              }
+              
+          @media (max-width: 768px) {
+          #area article
+              {
+                 
+              grid-area: articulo;  
+              display: flex;     
+              align-content: center;   
+              align-items: flex-start;   
+              flex-wrap: wrap;   
+              justify-content: center;
+              padding: 0px;
+          
+              }
+              }
+              
+          @media (max-width: 768px) {
+          #area aside
+              {
+                 display:none;
+              }
+              }
+              
+          @media (max-width: 768px) {
+          #area .arreglo
+              {
+              background-color: #D4F7BB;
+              grid-area: menu;
+              position:fixed;
+              left: 0px;
+              right:0px;
+              height: 50px;
+              padding: 0px;
+               }
+              }
+              
+             
+              
+          @media (max-width: 768px) {
+          #area section .titulo {
+              text-align: center;
+              font-weight: bold; 
+              font-size: 20px;
+              justify-self: center;
+              }
+              }
+              
+          @media (max-width: 768px) {
+          #area section .p1 {     
+              font-size: 10px;
+              padding: 5px;
+              align-self: center;
+              }
+              }
+              
+          @media (max-width: 768px) {
+          #area section .principal .lista {
+              width: auto;
+              height: 80px;
+              text-align: center;
+              }
+              }
+              
+          @media (max-width: 768px) {
+          #area section .principal .lista ul {
+              display:inline;
+              list-style: lower-roman;
+              font-style: oblique;  
+              font-family:'Courier New', Courier, monospace;
+              font-size: 10px;
+              }
+              }
+              
+              
+          @media (max-width: 768px) {
+          #area nav div img
+              {
+              display:none
+              }
+              }
+          
+          @media (max-width: 768px) {
+          #area nav
+              {    
+              grid-area: menu;      
+              display: flex;      
+              justify-content: center;    
+              padding-top: 18px;
+                  
+              /* padding-left: 0px; */
+                  
+              /* column-gap: 10px; */
+              }
+              }
+          
+          @media (max-width: 768px) {
+          #area article
+          {
+              
+              grid-area: articulo;
+              display: flex;
+              align-content: center;
+              justify-items: center;
+              align-items: flex-start;
+              padding-left: 20px;
+              gap: 10px;
+              padding: 0px;
+              margin: 0px;
+             
+          }
+              }
+          
+          @media (max-width: 768px) {
+          #area article p
+              {            
+              font-size: 10px;      
+              }
+              }
+          
+          
+          @media (max-width: 768px) {
+          #area article img{
+              width:300px;
+              height: auto;
+              padding-left: 0px;
+             
+          }
+          }
+          
+          @media (max-width: 768px) {
+          #area header
+          {
+              
+              grid-area: info;
+              position:fixed;
+              top: 40px;
+              left:0;
+              right:0;
+              padding-bottom: 5px;
+              background-image: url(../assets/clases_particulares2.png);
+              background-size: 100% auto;
+              background-repeat: no-repeat;
+          }
+          #area header h1{
+              width: 100%;
+              height: 250px;
+              text-align:center;
+              padding-top: 40px;
+              color:antiquewhite;
+              
+              
+          }
+          
+          
+          #area header span{
+              display:inline-block;
+              vertical-align: middle;
+              line-height: normal;
+            
+          }
+          
+          }        
+
